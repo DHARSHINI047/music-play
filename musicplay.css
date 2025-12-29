@@ -1,0 +1,170 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI', sans-serif;
+}
+
+body{
+    min-height:100vh;
+    background:#fdfcff;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+/* APP */
+.music-app{
+    width:420px;
+    background:#ffffff;
+    padding:26px;
+    border-radius:30px;
+    box-shadow:0 20px 40px rgba(0,0,0,0.15);
+}
+
+/* TITLE */
+.title{
+    text-align:center;
+    font-size:28px;
+    margin-bottom:24px;
+    background:linear-gradient(90deg,#6a11cb,#2575fc);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+}
+
+/* PLAYLIST */
+.playlist{
+    display:flex;
+    flex-direction:column;
+    gap:16px;
+}
+
+.track input{
+    display:none;
+}
+
+.song-card{
+    display:flex;
+    align-items:center;
+    gap:16px;
+    padding:14px;
+    border-radius:20px;
+    cursor:pointer;
+    transition:0.4s;
+}
+
+/* COLORS */
+.green{background:linear-gradient(135deg,#d4fc79,#96e6a1);}
+.blue{background:linear-gradient(135deg,#a1c4fd,#c2e9fb);}
+.purple{background:linear-gradient(135deg,#fbc2eb,#a6c1ee);}
+
+/* SELECTION EFFECT */
+.track input:checked + .song-card{
+    transform:scale(1.05);
+    box-shadow:0 15px 30px rgba(0,0,0,0.25);
+}
+
+/* ALBUM IMAGE */
+.album{
+    width:60px;
+    height:60px;
+    border-radius:14px;
+    object-fit:cover;
+    box-shadow:0 6px 15px rgba(0,0,0,0.25);
+}
+
+.track input:checked + .song-card .album{
+    transform:scale(1.1);
+}
+
+/* INFO */
+.info h3{
+    font-size:16px;
+    color:#222;
+}
+
+.info p{
+    font-size:13px;
+    color:#555;
+}
+
+/* PLAYER */
+.player{
+    margin-top:28px;
+    text-align:center;
+}
+
+.cd{
+    width:130px;
+    height:130px;
+    margin:0 auto 16px;
+    border-radius:50%;
+    background:conic-gradient(#a6c1ee,#fbc2eb,#a6c1ee);
+    animation:rotate 8s linear infinite;
+    box-shadow:0 0 35px rgba(166,193,238,0.8);
+}
+
+@keyframes rotate{
+    to{transform:rotate(360deg);}
+}
+
+.player h2{
+    font-size:18px;
+}
+
+.player span{
+    font-size:14px;
+    color:#777;
+}
+
+/* PROGRESS BAR */
+.bar{
+    height:7px;
+    background:#eee;
+    border-radius:10px;
+    margin:18px 0;
+    overflow:hidden;
+}
+
+.bar-fill{
+    height:100%;
+    width:100%;
+    background:linear-gradient(90deg,#a1c4fd,#fbc2eb);
+    animation:progress 12s linear infinite;
+}
+
+@keyframes progress{
+    from{width:0;}
+    to{width:100%;}
+}
+
+/* CONTROLS */
+.controls{
+    display:flex;
+    justify-content:center;
+    gap:22px;
+}
+
+.controls button{
+    width:56px;
+    height:56px;
+    border-radius:50%;
+    border:none;
+    background:#f1f3f8;
+    font-size:22px;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.controls button:hover{
+    background:#a6c1ee;
+    color:white;
+    transform:scale(1.15);
+}
+
+.play{
+    width:70px;
+    height:70px;
+    background:linear-gradient(135deg,#fbc2eb,#a6c1ee);
+    color:white;
+}
